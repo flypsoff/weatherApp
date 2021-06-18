@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import "typography/typography";
+
+body {
+  background-color: rgb(44, 68, 206);
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
