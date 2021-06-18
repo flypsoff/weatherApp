@@ -1,0 +1,14 @@
+<div class="header-container">
+  <div>
+    <h1>{{ city }}</h1>
+    <p>{{ getCurrentDate(date) }}</p>
+  </div>
+  <div>
+    <input
+      type="text"
+      placeholder="Ivano-Frankivsk"
+      [(ngModel)]="coortdinatesByCity"
+    />
+    <button (click)="getWeatherByCity()">Send</button>
+  </div>
+</div>
