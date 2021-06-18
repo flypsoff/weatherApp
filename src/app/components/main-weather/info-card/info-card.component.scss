@@ -1,0 +1,20 @@
+.info {
+  display: flex;
+  flex-direction: row;
+  min-width: 450px;
+
+  .temp-pressure,
+  .speed-humidity,
+  .sunrise-sunset {
+    width: 33%;
+    margin: 0 10px;
+
+    div {
+      padding: 10px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: rgb(103, 123, 235);
+      margin: 15px 5px;
+    }
+  }
+}

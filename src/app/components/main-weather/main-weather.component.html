@@ -1,0 +1,38 @@
+<div class="main-container">
+  <div class="base-info">
+    <img
+      [src]="weatherParams.img && imageSrc + weatherParams.img.icon + '.png'"
+      [alt]="(weatherParams.img && weatherParams.img.description) || 'weather'"
+    />
+
+    <div *ngIf="weatherParams.currentDay">
+      <div>
+        <h5 class="h7">current</h5>
+        <h1>{{ weatherParams.temp }}º</h1>
+        <h4>{{ weatherParams.weather }}</h4>
+      </div>
+    </div>
+
+    <div *ngIf="!weatherParams.currentDay">
+      <div>
+        <h5 class="h7">average</h5>
+        <h1>
+          {{
+            weatherParams.maxTemp &&
+              weatherParams.minTemp &&
+              getAverageTemp(weatherParams.maxTemp, weatherParams.minTemp)
+          }}º
+        </h1>
+        <h4>
+          {{ weatherParams.weather }}
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="other-info">
+    <div>
+      <app-info-card [weatherParams]="weatherParams"></app-info-card>
+    </div>
+  </div>
+</div>

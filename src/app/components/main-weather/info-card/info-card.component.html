@@ -1,0 +1,51 @@
+<div class="info">
+  <div class="temp-pressure">
+    <span *ngIf="weatherParams.currentDay; else otherDay">
+      <div>
+        <h2>{{ weatherParams.feelsLike }}º</h2>
+        <h4 class="h7">Feel like</h4>
+      </div>
+      <div>
+        <h2>{{ weatherParams.pressure }}</h2>
+        <h4 class="h7">Pressure</h4>
+      </div>
+    </span>
+
+    <ng-template #otherDay>
+      <div>
+        <h2>{{ weatherParams.maxTemp && getTemp(weatherParams.maxTemp) }}º</h2>
+        <h4 class="h7">High</h4>
+      </div>
+      <div>
+        <h2>{{ weatherParams.minTemp && getTemp(weatherParams.minTemp) }}º</h2>
+        <h4 class="h7">Low</h4>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="speed-humidity">
+    <div>
+      <h2>{{ weatherParams.windSpeed }}/kph</h2>
+      <h4 class="h7">Wind speed</h4>
+    </div>
+    <div>
+      <h2>{{ weatherParams.humidity }}%</h2>
+      <h4 class="h7">Humidity</h4>
+    </div>
+  </div>
+
+  <div class="sunrise-sunset">
+    <div>
+      <h2>
+        {{ weatherParams.sunrise }}
+      </h2>
+      <h4 class="h7">Sunrise</h4>
+    </div>
+    <div>
+      <h2>
+        {{ weatherParams.sunset }}
+      </h2>
+      <h4 class="h7">Sunset</h4>
+    </div>
+  </div>
+</div>
