@@ -1,0 +1,10 @@
+<div class="days-container">
+  <div>
+    <h2>Weather for several days</h2>
+  </div>
+  <div class="days">
+    <div *ngFor="let day of days; let i = index">
+      <app-day-card [day]="day" (click)="setCurrentDay(day)"></app-day-card>
+    </div>
+  </div>
+</div>

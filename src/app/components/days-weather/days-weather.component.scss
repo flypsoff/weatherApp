@@ -1,0 +1,11 @@
+.days-container {
+  display: flex;
+  flex-direction: column;
+
+  .days {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="day-card">
+  <h3>{{ getDate(day.dt) }}</h3>
+  <img
+    [src]="imageSrc + day.img.icon + '.png'"
+    [alt]="(day.img && day.img.description) || 'weather'"
+    width="75px"
+  />
+  <div *ngIf="day.currentDay; else otherDays">
+    <h4>{{ day.temp }}º</h4>
+  </div>
+  <ng-template #otherDays>
+    <h4>{{ getTemperature(day.maxTemp, day.minTemp) }}º</h4>
+  </ng-template>
+</div>

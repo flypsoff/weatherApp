@@ -1,0 +1,15 @@
+.day-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(37, 57, 167);
+  border-radius: 8px;
+  cursor: pointer;
+
+  h3,
+  h4 {
+    margin: 10px 0;
+  }
+}
