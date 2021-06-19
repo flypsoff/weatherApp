@@ -17,10 +17,6 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {}
 
-  public getAverageTemperature(maxT: number, minT: number): number {
-    return Math.round((maxT + minT) / 2);
-  }
-
   public getCoordinates(city: string): Observable<any> {
     return this.http
       .get(`${environment.apiDataByCity}?q=${city}&appid=${environment.apiKey}`)

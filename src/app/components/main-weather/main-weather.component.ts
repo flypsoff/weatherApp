@@ -34,10 +34,6 @@ export class MainWeatherComponent implements OnInit, OnDestroy {
 
   constructor(private weatherService: WeatherService) {}
 
-  public getAverageTemp(max: number, min: number): number {
-    return this.weatherService.getAverageTemperature(max, min);
-  }
-
   ngOnInit(): void {
     this.subCurrentWeather = this.weatherService.currentDay$.subscribe(
       (data) => {

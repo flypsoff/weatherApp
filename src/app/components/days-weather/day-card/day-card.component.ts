@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { WeatherService } from 'src/app/services/weather.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -12,9 +11,5 @@ export class DayCardComponent {
 
   public imageSrc = environment.apiImageLink;
 
-  public getTemperature(maxT: number, minT: number): number {
-    return this.weatherService.getAverageTemperature(maxT, minT);
-  }
-
-  constructor(private weatherService: WeatherService) {}
+  constructor() {}
 }

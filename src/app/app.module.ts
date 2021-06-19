@@ -13,6 +13,7 @@ import { TimePipe } from './pipes/time/time.pipe';
 import { DatePipe } from './pipes/date/date.pipe';
 import { TemperaturePipe } from './pipes/temperature/temperature.pipe';
 import { KilometersPipe } from './pipes/kilometers/kilometers.pipe';
+import { AverageTemperaturePipe } from './pipes/averageTemperature/average-temperature.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { KilometersPipe } from './pipes/kilometers/kilometers.pipe';
     DatePipe,
     TemperaturePipe,
     KilometersPipe,
+    AverageTemperaturePipe,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],

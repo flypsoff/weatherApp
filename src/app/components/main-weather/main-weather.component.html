@@ -20,7 +20,8 @@
           {{
             weatherParams.maxTemp &&
               weatherParams.minTemp &&
-              getAverageTemp(weatherParams.maxTemp, weatherParams.minTemp)
+              (weatherParams.maxTemp
+                | averageTemperature: weatherParams.minTemp)
           }}º
         </h1>
         <h4>

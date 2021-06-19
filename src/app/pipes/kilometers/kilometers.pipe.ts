@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'kilometers',
 })
 export class KilometersPipe implements PipeTransform {
-  transform(value: number): unknown {
+  transform(value: number): number {
     return Math.round(value * 1.6);
   }
 }

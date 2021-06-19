@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'time',
 })
 export class TimePipe implements PipeTransform {
-  transform(value: number): unknown {
+  transform(value: number): string {
     return new Date(Number(`${value}000`)).toLocaleTimeString();
   }
 }
