@@ -15,8 +15,8 @@ export class MainWeatherComponent implements OnInit, OnDestroy {
   public weatherParams: WeatherParams = {
     currentDay: true,
     humidity: 40,
-    sunrise: '09:09:09',
-    sunset: '10:10:10',
+    sunrise: 1234567,
+    sunset: 1234567,
     weather: 'Clouds',
     windSpeed: 5,
     img: {

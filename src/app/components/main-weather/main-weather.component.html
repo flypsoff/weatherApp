@@ -8,7 +8,7 @@
     <div *ngIf="weatherParams.currentDay">
       <div>
         <h5 class="h7">current</h5>
-        <h1>{{ weatherParams.temp }}º</h1>
+        <h1>{{ weatherParams.temp && (weatherParams.temp | temperature) }}º</h1>
         <h4>{{ weatherParams.weather }}</h4>
       </div>
     </div>

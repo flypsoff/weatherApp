@@ -24,10 +24,6 @@ export class HeaderWeatherComponent implements OnInit, OnDestroy {
       });
   }
 
-  public getCurrentDate(date: number): string {
-    return this.weatherService.getRightFormatDate(date);
-  }
-
   ngOnInit(): void {
     this.subDate = this.weatherService.currentDay$.subscribe((data) => {
       this.date = data.dt;

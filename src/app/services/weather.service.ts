@@ -17,20 +17,8 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {}
 
-  public getRightFormatTemperature(temp: number): number {
-    return Math.round(temp);
-  }
-
   public getAverageTemperature(maxT: number, minT: number): number {
     return Math.round((maxT + minT) / 2);
-  }
-
-  public getRightFormatTime(time: number): string {
-    return new Date(+`${time}000`).toLocaleTimeString();
-  }
-
-  public getRightFormatDate(date: number): string {
-    return new Date(+`${date}000`).toLocaleDateString();
   }
 
   public getCoordinates(city: string): Observable<any> {
@@ -60,13 +48,13 @@ export class WeatherService {
 
           const firstWeatherDay: FirstWeatherDayInterface = {
             humidity: res.current.humidity,
-            feelsLike: Math.round(res.current.feels_like),
+            feelsLike: res.current.feels_like,
             pressure: res.current.pressure,
-            temp: Math.round(res.current.temp),
+            temp: res.current.temp,
             weather: res.current.weather[0].main,
-            windSpeed: Math.round(res.current.wind_speed * 1.6),
-            sunrise: this.getRightFormatTime(res.current.sunrise),
-            sunset: this.getRightFormatTime(res.current.sunset),
+            windSpeed: res.current.wind_speed * 1.6,
+            sunrise: res.current.sunrise,
+            sunset: res.current.sunset,
             dt: res.current.dt,
             currentDay: true,
             img: {
@@ -87,10 +75,10 @@ export class WeatherService {
               humidity: item.humidity,
               maxTemp: item.temp.max,
               minTemp: item.temp.min,
-              sunrise: this.getRightFormatTime(item.sunrise),
-              sunset: this.getRightFormatTime(item.sunset),
+              sunrise: item.sunrise,
+              sunset: item.sunset,
               weather: item.weather[0].main,
-              windSpeed: Math.round(item.wind_speed * 1.6),
+              windSpeed: item.wind_speed * 1.6,
               img: {
                 icon: item.weather[0].icon,
                 description: item.weather[0].description,

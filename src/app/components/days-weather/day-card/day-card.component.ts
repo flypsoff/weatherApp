@@ -16,9 +16,5 @@ export class DayCardComponent {
     return this.weatherService.getAverageTemperature(maxT, minT);
   }
 
-  public getDate(date: number): string {
-    return this.weatherService.getRightFormatDate(date);
-  }
-
   constructor(private weatherService: WeatherService) {}
 }

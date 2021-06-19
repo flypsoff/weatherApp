@@ -9,6 +9,10 @@ import { HeaderWeatherComponent } from './components/header-weather/header-weath
 import { InfoCardComponent } from './components/main-weather/info-card/info-card.component';
 import { DaysWeatherComponent } from './components/days-weather/days-weather.component';
 import { DayCardComponent } from './components/days-weather/day-card/day-card.component';
+import { TimePipe } from './pipes/time/time.pipe';
+import { DatePipe } from './pipes/date/date.pipe';
+import { TemperaturePipe } from './pipes/temperature/temperature.pipe';
+import { KilometersPipe } from './pipes/kilometers/kilometers.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,10 @@ import { DayCardComponent } from './components/days-weather/day-card/day-card.co
     InfoCardComponent,
     DaysWeatherComponent,
     DayCardComponent,
+    TimePipe,
+    DatePipe,
+    TemperaturePipe,
+    KilometersPipe,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],

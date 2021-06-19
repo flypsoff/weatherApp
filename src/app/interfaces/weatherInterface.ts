@@ -38,8 +38,8 @@ export interface WeatherParamsInfo {
   minTemp?: number;
   windSpeed: number;
   humidity: number;
-  sunrise: string;
-  sunset: string;
+  sunrise: number;
+  sunset: number;
   currentDay: boolean;
 }
 
