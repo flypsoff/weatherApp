@@ -1,6 +1,8 @@
 .days-container {
   display: flex;
   flex-direction: column;
+  max-width: 1450px;
+  margin: 0 auto;
 
   .title {
     padding-left: 30px;
