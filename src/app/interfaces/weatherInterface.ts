@@ -1,4 +1,4 @@
-export interface FirstWeatherDayInterface {
+export interface CurrentWeatherDayInterface {
   temp: number;
   weather: string;
   humidity: number;
@@ -13,6 +13,7 @@ export interface FirstWeatherDayInterface {
     icon: string;
     description: string;
   };
+  // city: string;
 }
 
 export interface OtherWeatherDayInterface {

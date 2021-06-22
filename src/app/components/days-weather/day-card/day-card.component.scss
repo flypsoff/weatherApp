@@ -3,13 +3,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 23px;
   background-color: rgb(37, 57, 167);
   border-radius: 8px;
   cursor: pointer;
 
+  .temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   h3,
   h4 {
     margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .day-card {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5px 0;
+    padding: 0;
+
+    .temp {
+      flex-direction: row;
+
+      h4 {
+        padding-left: 10px;
+      }
+    }
   }
 }

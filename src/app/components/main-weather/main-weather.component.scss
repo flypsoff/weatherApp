@@ -1,7 +1,7 @@
 .main-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 
   .base-info,
   .other-info {
@@ -9,10 +9,10 @@
   }
 
   .base-info {
-    width: 40%;
+    width: 35%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     border-right: 1px solid #fff;
 
@@ -35,5 +35,22 @@
 
   h4 {
     letter-spacing: 1px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+
+    .other-info,
+    .base-info {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .base-info {
+      border-right: none;
+    }
   }
 }

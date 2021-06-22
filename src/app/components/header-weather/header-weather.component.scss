@@ -1,5 +1,28 @@
 .header-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: baseline;
+}
+
+@media screen and (max-width: 500px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .city-date,
+    .input {
+      margin: 0 auto;
+    }
+
+    .city-date {
+      padding-top: 15px;
+      order: 2;
+    }
+
+    .input {
+      order: 1;
+    }
+  }
 }

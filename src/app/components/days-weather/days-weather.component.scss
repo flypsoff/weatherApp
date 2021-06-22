@@ -2,10 +2,23 @@
   display: flex;
   flex-direction: column;
 
+  .title {
+    padding-left: 30px;
+  }
+
   .days {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .days-container {
+    .days {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }

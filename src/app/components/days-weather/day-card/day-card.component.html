@@ -1,14 +1,18 @@
 <div class="day-card">
-  <h3>{{ day.dt | date }}</h3>
-  <img
-    [src]="imageSrc + day.img.icon + '.png'"
-    [alt]="(day.img && day.img.description) || 'weather'"
-    width="75px"
-  />
-  <div *ngIf="day.currentDay; else otherDays">
-    <h4>{{ day.temp | temperature }}º</h4>
+  <div class="date">
+    <h3>{{ day.dt | date }}</h3>
   </div>
-  <ng-template #otherDays>
-    <h4>{{ day.maxTemp | averageTemperature: day.minTemp }}º</h4>
-  </ng-template>
+  <div class="temp">
+    <img
+      [src]="imageSrc + day.img.icon + '.png'"
+      [alt]="(day.img && day.img.description) || 'weather'"
+      width="75px"
+    />
+    <div *ngIf="day.currentDay; else otherDays">
+      <h4>{{ day.temp | temperature }}º</h4>
+    </div>
+    <ng-template #otherDays>
+      <h4>{{ day.maxTemp | averageTemperature: day.minTemp }}º</h4>
+    </ng-template>
+  </div>
 </div>

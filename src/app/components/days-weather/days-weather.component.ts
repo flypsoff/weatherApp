@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {
-  FirstWeatherDayInterface,
+  CurrentWeatherDayInterface,
   OtherWeatherDayInterface,
 } from 'src/app/interfaces/weatherInterface';
 import { WeatherService } from 'src/app/services/weather.service';
@@ -14,12 +14,13 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class DaysWeatherComponent implements OnInit, OnDestroy {
   private subWeatherDay!: Subscription;
 
-  public days: Array<FirstWeatherDayInterface | OtherWeatherDayInterface> = [];
+  public days: Array<CurrentWeatherDayInterface | OtherWeatherDayInterface> =
+    [];
 
   constructor(private weatherService: WeatherService) {}
 
   public setCurrentDay(
-    day: FirstWeatherDayInterface | OtherWeatherDayInterface
+    day: CurrentWeatherDayInterface | OtherWeatherDayInterface
   ): void {
     this.weatherService.currentDay$.next(day);
   }

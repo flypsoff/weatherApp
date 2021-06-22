@@ -18,3 +18,25 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    width: 90vw;
+
+    .temp-pressure,
+    .speed-humidity,
+    .sunrise-sunset {
+      text-align: center;
+      width: 100%;
+      margin: 0;
+
+      div {
+        margin: 10px 5px;
+      }
+    }
+  }
+}

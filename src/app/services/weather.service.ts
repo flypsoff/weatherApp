@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, of } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 import {
-  FirstWeatherDayInterface,
+  CurrentWeatherDayInterface,
   OtherWeatherDayInterface,
 } from '../interfaces/weatherInterface';
 
@@ -14,6 +14,7 @@ import {
 export class WeatherService {
   public days$ = new Subject<any>();
   public currentDay$ = new Subject<any>();
+  public city$ = new Subject<any>();
 
   constructor(private http: HttpClient) {}
 
@@ -23,15 +24,13 @@ export class WeatherService {
       .pipe(
         map((res: any) => res[0]),
         mergeMap((value) => {
+          this.city$.next(value.name);
           return this.getWeather(value.lat, value.lon).pipe(map(() => value));
         })
       );
   }
 
-  public getWeather(
-    lat: number = 48.9225,
-    lon: number = 24.7103
-  ): Observable<any> {
+  public getWeather(lat: number, lon: number): Observable<any> {
     return this.http
       .get(
         `${environment.apiDataByLocation}?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=metric&appid=${environment.apiKey}`
@@ -39,10 +38,10 @@ export class WeatherService {
       .pipe(
         map((res: any) => {
           const daysOfWeather: Array<
-            FirstWeatherDayInterface | OtherWeatherDayInterface
+            CurrentWeatherDayInterface | OtherWeatherDayInterface
           > = [];
 
-          const firstWeatherDay: FirstWeatherDayInterface = {
+          const firstWeatherDay: CurrentWeatherDayInterface = {
             humidity: res.current.humidity,
             feelsLike: res.current.feels_like,
             pressure: res.current.pressure,
@@ -62,6 +61,10 @@ export class WeatherService {
           res.daily.map((item: any, index: number) => {
             if (index === 0) {
               daysOfWeather.push(firstWeatherDay);
+              return;
+            }
+
+            if (index === 7) {
               return;
             }
 
