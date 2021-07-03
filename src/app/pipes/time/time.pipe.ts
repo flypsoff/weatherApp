@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TimePipe implements PipeTransform {
   transform(value: number): string {
-    return new Date(Number(`${value}000`)).toLocaleTimeString();
+    const date = new Date(Number(`${value}000`)).toLocaleTimeString();
+    return date.split(' ')[0]
   }
 }
